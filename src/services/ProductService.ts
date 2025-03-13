@@ -2,6 +2,7 @@ import { safeParse} from "valibot"; //Validar
 import { DraftProductSchema, ProductSchema, ProductsSchema } from "../types";
 import { ProductOk } from "../types";
 import axios from "axios";
+import { toBoolean } from "../utils";
 
 type ProductData={
     [k:string]:FormDataEntryValue;
@@ -80,13 +81,13 @@ export const updateProduct=async(data:ProductData, id:ProductOk['id'])=>{
            id,
            name:data.name,
            price:Number(data.price),
-           availability:Boolean(data.availability)
+           availability:toBoolean(data.availability.toString())
         })
         if(result.success){
             const url=`${import.meta.env.VITE_API_URL}/api/products/${id}`
             await axios.put(url, result.output)
         }
-        console.log(result)
+        console.log(result.output)
     }catch(error){
         console.log(error)
     }
@@ -100,9 +101,6 @@ export const updateAvailability=async(id:ProductOk['id'])=>{
         console.log(error)
     }
 }
-
-
-
 
 
 export const deleteProduct=async(id:ProductOk['id'])=>{

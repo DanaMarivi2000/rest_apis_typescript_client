@@ -18,6 +18,7 @@ export const loader=async({params}:LoaderFunctionArgs)=>{
         }
     }
 
+    const availabilityOptions=[{name:"Disponible", value:true},{name:"No Disponible", value:false}]
     export const action=async({request,params}:ActionFunctionArgs)=>{
         const data=Object.fromEntries(await request.formData())
         let error=""
@@ -32,7 +33,6 @@ export const loader=async({params}:LoaderFunctionArgs)=>{
             return redirect("/")
         }
     }
-const availabilityOptions=[{name:"Disponible", value:true},{name:"No Disponible", value:false}]
 const EditProduct=()=>{
     const product=useLoaderData()
     const error=useActionData()
