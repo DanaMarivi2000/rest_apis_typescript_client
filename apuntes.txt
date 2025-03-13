@@ -1,0 +1,62 @@
+Data API's
+
+Se agrego a la versión 6.4 de react router dom, permiten obtener datos de una API de forma muy eficiente, también te permiten manejar entrada de datos desde un formulario
+
+Actions
+React router
+
+Utiliza actions para procesar la entrada de datos en un formulario 
+Para ello deberás importar un componente llamdo <Form> </Form>, crear una función y en tu router decirle que función debe ejecutarse en el action
+Variable de entorno: te permite tener valores en el entorno de desarrollo y valores diferentes en el entorno de producción
+CORS: Por sus siglas en inglés Cross-Origin Resource Sharing (Compartir recursos entre diferentes orígenes), es un mecanismo de seguridad utilizado en los navegadores web para controlar las solicitudes de recursos entre dominios diferentes. En esencia, CORS es una política de seguridad implementada en el lado del servidor que permite 
+o deniega las solicitudes de recursos web de un origen cruzado.
+Cors protegen nuestra rest api para que solamente dominios que nosotros demos de alta puedan realizar peticiones
+Origen Cruzado o cross Origin
+Cuando un recurso (como una fuente, una imagen o una hoja de estilo) se solicita desde un dominio o puerto diferente al del origen del recurso actual, se considera una solicitud de origen cruzado. Antes de que se implementará CORS, los navegadores web modernos restringían automaticamente las solicitudes de origen cruzado para prevenir ataques de seguridad como el secuestro de sesiones y la inyección de scripts maliciosos
+
+Ventajas de CORS
+
+Seguridad: Cors permite a los servidores tener un control más granular sobre qué dominios pueden acceder a los recursos. Esto reduce la posibilidad de ataques maliciosos de origen cruzado.
+Acceso controlado a recurso: Cors permite a los sitios web controlar qué recursos están disponibles para ser solicitados por dominios externos y qué recursos están restringidos. Esto brinda mayor control sobre los datos y recursos del sitio web
+Interoperabilidad: CORS facilita el intercambio de datos y recursos entre diferentes dominios. Esto es particularmente útil en situaciones en las que una pagina web necesita cargar recursos de múltiples dominios para funcionar correctamente, como los casos de uso de API o la carga de fuentes externas.
+Dominio es diferente a rutas, las rutas integran un dominio.
+¡Exactamente! El dominio en el contexto de CORS y las solicitudes web se compone de tres partes principales:
+
+Protocolo: Es el esquema que define el tipo de conexión. Comúnmente, puede ser http o https, aunque hay otros menos comunes.
+
+Dominio (o nombre del sitio): Es el nombre del servidor o del sitio web, por ejemplo, mi-frontend.com o mi-backend.com.
+
+Puerto: Es el número que especifica el puerto de la red al que se accede en el servidor. El puerto es opcional en la URL, ya que por defecto se usa el puerto 80 para http y el 443 para https. Sin embargo, si se usa un puerto diferente, se debe especificar explícitamente en la URL (por ejemplo, https://mi-frontend.com:8080).
+
+Entonces, un dominio completo está compuesto por la combinación de estos tres elementos: protocolo, nombre de dominio y puerto.
+
+Ejemplo de un dominio completo:
+https://mi-frontend.com:3000
+Protocolo: https
+Dominio: mi-frontend.com
+Puerto: 3000
+CORS y el dominio:
+Cuando se habla de CORS, el navegador considera que dos URLs son de diferentes orígenes (dominios) si al menos uno de estos tres componentes (protocolo, dominio o puerto) es diferente.
+
+Por ejemplo:
+
+https://mi-frontend.com y https://mi-backend.com son diferentes orígenes porque los dominios son distintos.
+https://mi-frontend.com y http://mi-frontend.com son diferentes orígenes porque el protocolo es diferente.
+https://mi-frontend.com y https://mi-frontend.com:3000 son diferentes orígenes porque el puerto es diferente.
+Pero si ambas URLs comparten protocolo, dominio y puerto, entonces se consideran el mismo origen, y no hay problemas de CORS.
+
+Por ejemplo:
+
+https://mi-frontend.com/api/products y https://mi-frontend.com/api/products/1 son el mismo origen, incluso si las rutas son diferentes.
+
+Morgan es un middleware que va a estar logueando todas las peticiones, todas las interacciones que estamos haciedo en nuestra REST API
+Loaders React Router utiliza loaders para obtener datos de una API, similar a useEffect y colocar la respuesta en un state
+Para ello deberás crear una función y en tu router decirle que función debe ejecutarse en el loader.
+
+useLoaderData cuando quieras obtener el resultado de un loader, Este es especial para cargar información de una API.
+useActionLoader cuando quieras obtener el resultado de un action. Este es especial cuando trabajas con formularios
+A diferencia de link, link solo puede ser utilizado en la presentación en la parte del return , puede ser utilizado después de que  un usuario cierra sesion puede ser utilizadp después de que se llena un formulario
+useNavigate puede ser utilizado en el return o antes del return
+Los loaders son para obtener datos y los action para formularios
+UseFecher realiza las interacciones en la misma página para no tener que redireccionar al usuario
+Las acciones pertenecen a la URL a la cual se está ejeccutando
