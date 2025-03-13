@@ -95,7 +95,7 @@ export const updateProduct=async(data:ProductData, id:ProductOk['id'])=>{
 export const updateAvailability=async(id:ProductOk['id'])=>{
     try{
         const url=`${import.meta.env.VITE_API_URL}/api/products/${id}`
-        await axios.patch(url,id)
+        await axios.patch(url)
     }catch(error){
         console.log(error)
     }

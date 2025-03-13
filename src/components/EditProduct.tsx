@@ -1,4 +1,4 @@
-import {Form, Link, LoaderFunctionArgs, useLocation,  useLoaderData, redirect, ActionFunctionArgs, useActionData} from 'react-router-dom'
+import {Form, Link, LoaderFunctionArgs, useLoaderData, redirect, ActionFunctionArgs, useActionData} from 'react-router-dom'
 import { getProductById, updateProduct } from '../services/ProductService'
 
 import ErrorMessage from './ErrorMessage'

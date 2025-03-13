@@ -1,4 +1,4 @@
-import { BrowserRouter, createBrowserRouter, Route, Routes } from 'react-router-dom'
+import {createBrowserRouter } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import Products from './views/Products'
 import NewProduct from './views/NewProduct'
