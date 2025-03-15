@@ -1,4 +1,4 @@
-import {Form, Link, LoaderFunctionArgs, useLoaderData, redirect, ActionFunctionArgs, useActionData} from 'react-router-dom'
+import {Form, LoaderFunctionArgs, useLoaderData, redirect, ActionFunctionArgs, useActionData} from 'react-router-dom'
 import { getProductById, updateProduct } from '../services/ProductService'
 
 import ErrorMessage from './ErrorMessage'
@@ -40,8 +40,6 @@ const EditProduct=()=>{
             <>
  <div className="flex justify-between align-center">
       <h2 className="text-4xl font-black text-slate-500">Editar Producto</h2>
-       
-       <Link to="products/new" className="rounded-md bg-indigo-600 p-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-400">Agregar a productos</Link>
      </div>
 
      {error&&<ErrorMessage>{error}</ErrorMessage>}

@@ -11,7 +11,6 @@ type ProductData={
 export const getProducts=async()=>{
     const url=`${import.meta.env.VITE_API_URL}/api/products`
 
-
     try{
         const {data}= await axios(url)
         console.log(data)
